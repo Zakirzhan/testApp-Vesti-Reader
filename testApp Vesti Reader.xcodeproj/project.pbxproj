@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF1F5EC9D15FDA8880BBD3CD /* Pods_testApp_Vesti_Reader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC646058EBAD0955DF5FF9EC /* Pods_testApp_Vesti_Reader.framework */; };
+		F03151DC1FA899D800FC7200 /* OpenSansCondensed-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03151D81FA897C700FC7200 /* OpenSansCondensed-Light.ttf */; };
+		F03151DD1FA899D800FC7200 /* OpenSansCondensed-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03151D91FA897C700FC7200 /* OpenSansCondensed-LightItalic.ttf */; };
+		F03151DE1FA899D800FC7200 /* OpenSansCondensed-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F03CC1811FA88A7B004BAA60 /* OpenSansCondensed-Bold.ttf */; };
+		F0389A271FA79FED0008E216 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0389A261FA79FED0008E216 /* AppDelegate.swift */; };
+		F0389A291FA79FED0008E216 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0389A281FA79FED0008E216 /* ViewController.swift */; };
+		F0389A2E1FA79FED0008E216 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0389A2D1FA79FED0008E216 /* Assets.xcassets */; };
+		F0389A311FA79FED0008E216 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0389A2F1FA79FED0008E216 /* LaunchScreen.storyboard */; };
+		F0389A3C1FA79FED0008E216 /* testApp_Vesti_ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0389A3B1FA79FED0008E216 /* testApp_Vesti_ReaderTests.swift */; };
+		F0389A471FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0389A461FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift */; };
+		F03CC1851FA88DB6004BAA60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0389A321FA79FED0008E216 /* Info.plist */; };
+		F0F9769D1FA8619500807798 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9769C1FA8619500807798 /* NewsTableViewCell.swift */; };
+		F0F9769F1FA861B700807798 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9769E1FA861B700807798 /* News.swift */; };
+		F0F976A11FA865F900807798 /* ShowNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F976A01FA865F900807798 /* ShowNewsViewController.swift */; };
+		F0F976A41FA887C100807798 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F976A31FA887C100807798 /* Macros.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F0389A381FA79FED0008E216 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0389A1B1FA79FED0008E216 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0389A221FA79FED0008E216;
+			remoteInfo = "testApp Vesti Reader";
+		};
+		F0389A431FA79FED0008E216 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F0389A1B1FA79FED0008E216 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F0389A221FA79FED0008E216;
+			remoteInfo = "testApp Vesti Reader";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		79164B590821A614C20E880A /* Pods-testApp Vesti Reader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testApp Vesti Reader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testApp Vesti Reader/Pods-testApp Vesti Reader.debug.xcconfig"; sourceTree = "<group>"; };
+		98B6CE554C07F78B4A465F67 /* Pods-testApp Vesti Reader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testApp Vesti Reader.release.xcconfig"; path = "Pods/Target Support Files/Pods-testApp Vesti Reader/Pods-testApp Vesti Reader.release.xcconfig"; sourceTree = "<group>"; };
+		CC646058EBAD0955DF5FF9EC /* Pods_testApp_Vesti_Reader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testApp_Vesti_Reader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03151D81FA897C700FC7200 /* OpenSansCondensed-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSansCondensed-Light.ttf"; sourceTree = "<group>"; };
+		F03151D91FA897C700FC7200 /* OpenSansCondensed-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSansCondensed-LightItalic.ttf"; sourceTree = "<group>"; };
+		F0389A231FA79FED0008E216 /* testApp Vesti Reader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "testApp Vesti Reader.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0389A261FA79FED0008E216 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F0389A281FA79FED0008E216 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F0389A2D1FA79FED0008E216 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0389A301FA79FED0008E216 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F0389A321FA79FED0008E216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0389A371FA79FED0008E216 /* testApp Vesti ReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "testApp Vesti ReaderTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0389A3B1FA79FED0008E216 /* testApp_Vesti_ReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testApp_Vesti_ReaderTests.swift; sourceTree = "<group>"; };
+		F0389A3D1FA79FED0008E216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0389A421FA79FED0008E216 /* testApp Vesti ReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "testApp Vesti ReaderUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F0389A461FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testApp_Vesti_ReaderUITests.swift; sourceTree = "<group>"; };
+		F0389A481FA79FED0008E216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F03CC1811FA88A7B004BAA60 /* OpenSansCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSansCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		F0F9769C1FA8619500807798 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		F0F9769E1FA861B700807798 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = "testApp Vesti Reader/Models/News.swift"; sourceTree = SOURCE_ROOT; };
+		F0F976A01FA865F900807798 /* ShowNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNewsViewController.swift; sourceTree = "<group>"; };
+		F0F976A31FA887C100807798 /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F0389A201FA79FED0008E216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF1F5EC9D15FDA8880BBD3CD /* Pods_testApp_Vesti_Reader.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0389A341FA79FED0008E216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0389A3F1FA79FED0008E216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		88718A2F0C38D86F77DC58E6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79164B590821A614C20E880A /* Pods-testApp Vesti Reader.debug.xcconfig */,
+				98B6CE554C07F78B4A465F67 /* Pods-testApp Vesti Reader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A64A2E97894BCC53BF606EB7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC646058EBAD0955DF5FF9EC /* Pods_testApp_Vesti_Reader.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F0389A1A1FA79FED0008E216 = {
+			isa = PBXGroup;
+			children = (
+				F0389A251FA79FED0008E216 /* testApp Vesti Reader */,
+				F0389A3A1FA79FED0008E216 /* testApp Vesti ReaderTests */,
+				F0389A451FA79FED0008E216 /* testApp Vesti ReaderUITests */,
+				F0389A241FA79FED0008E216 /* Products */,
+				88718A2F0C38D86F77DC58E6 /* Pods */,
+				A64A2E97894BCC53BF606EB7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F0389A241FA79FED0008E216 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F0389A231FA79FED0008E216 /* testApp Vesti Reader.app */,
+				F0389A371FA79FED0008E216 /* testApp Vesti ReaderTests.xctest */,
+				F0389A421FA79FED0008E216 /* testApp Vesti ReaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F0389A251FA79FED0008E216 /* testApp Vesti Reader */ = {
+			isa = PBXGroup;
+			children = (
+				F0389A321FA79FED0008E216 /* Info.plist */,
+				F0F976A21FA887AF00807798 /* Extensions */,
+				F0ECEF4C1FA85E190005D0A2 /* Models */,
+				F0ECEF4E1FA85E280005D0A2 /* Views */,
+				F0ECEF4D1FA85E200005D0A2 /* Controllers */,
+				F03CC17E1FA88A4A004BAA60 /* Resources */,
+			);
+			path = "testApp Vesti Reader";
+			sourceTree = "<group>";
+		};
+		F0389A3A1FA79FED0008E216 /* testApp Vesti ReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				F0389A3B1FA79FED0008E216 /* testApp_Vesti_ReaderTests.swift */,
+				F0389A3D1FA79FED0008E216 /* Info.plist */,
+			);
+			path = "testApp Vesti ReaderTests";
+			sourceTree = "<group>";
+		};
+		F0389A451FA79FED0008E216 /* testApp Vesti ReaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F0389A461FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift */,
+				F0389A481FA79FED0008E216 /* Info.plist */,
+			);
+			path = "testApp Vesti ReaderUITests";
+			sourceTree = "<group>";
+		};
+		F03CC17E1FA88A4A004BAA60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F03151D81FA897C700FC7200 /* OpenSansCondensed-Light.ttf */,
+				F03151D91FA897C700FC7200 /* OpenSansCondensed-LightItalic.ttf */,
+				F03CC1811FA88A7B004BAA60 /* OpenSansCondensed-Bold.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0ECEF4C1FA85E190005D0A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F0F9769E1FA861B700807798 /* News.swift */,
+			);
+			name = Models;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		F0ECEF4D1FA85E200005D0A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0389A281FA79FED0008E216 /* ViewController.swift */,
+				F0F976A01FA865F900807798 /* ShowNewsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F0ECEF4E1FA85E280005D0A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F0F9769C1FA8619500807798 /* NewsTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0F976A21FA887AF00807798 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F0389A2F1FA79FED0008E216 /* LaunchScreen.storyboard */,
+				F0389A2D1FA79FED0008E216 /* Assets.xcassets */,
+				F0389A261FA79FED0008E216 /* AppDelegate.swift */,
+				F0F976A31FA887C100807798 /* Macros.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F0389A221FA79FED0008E216 /* testApp Vesti Reader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0389A4B1FA79FED0008E216 /* Build configuration list for PBXNativeTarget "testApp Vesti Reader" */;
+			buildPhases = (
+				37C45323DDEAD87EBF6BEFF6 /* [CP] Check Pods Manifest.lock */,
+				F0389A1F1FA79FED0008E216 /* Sources */,
+				F0389A201FA79FED0008E216 /* Frameworks */,
+				F0389A211FA79FED0008E216 /* Resources */,
+				53754284F2D2985D51C03068 /* [CP] Embed Pods Frameworks */,
+				825D8A3EB0F290B842A98074 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "testApp Vesti Reader";
+			productName = "testApp Vesti Reader";
+			productReference = F0389A231FA79FED0008E216 /* testApp Vesti Reader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F0389A361FA79FED0008E216 /* testApp Vesti ReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0389A4E1FA79FED0008E216 /* Build configuration list for PBXNativeTarget "testApp Vesti ReaderTests" */;
+			buildPhases = (
+				F0389A331FA79FED0008E216 /* Sources */,
+				F0389A341FA79FED0008E216 /* Frameworks */,
+				F0389A351FA79FED0008E216 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0389A391FA79FED0008E216 /* PBXTargetDependency */,
+			);
+			name = "testApp Vesti ReaderTests";
+			productName = "testApp Vesti ReaderTests";
+			productReference = F0389A371FA79FED0008E216 /* testApp Vesti ReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F0389A411FA79FED0008E216 /* testApp Vesti ReaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0389A511FA79FED0008E216 /* Build configuration list for PBXNativeTarget "testApp Vesti ReaderUITests" */;
+			buildPhases = (
+				F0389A3E1FA79FED0008E216 /* Sources */,
+				F0389A3F1FA79FED0008E216 /* Frameworks */,
+				F0389A401FA79FED0008E216 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F0389A441FA79FED0008E216 /* PBXTargetDependency */,
+			);
+			name = "testApp Vesti ReaderUITests";
+			productName = "testApp Vesti ReaderUITests";
+			productReference = F0389A421FA79FED0008E216 /* testApp Vesti ReaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F0389A1B1FA79FED0008E216 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Zakirzhan Aisabaev";
+				TargetAttributes = {
+					F0389A221FA79FED0008E216 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					F0389A361FA79FED0008E216 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F0389A221FA79FED0008E216;
+					};
+					F0389A411FA79FED0008E216 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = F0389A221FA79FED0008E216;
+					};
+				};
+			};
+			buildConfigurationList = F0389A1E1FA79FED0008E216 /* Build configuration list for PBXProject "testApp Vesti Reader" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F0389A1A1FA79FED0008E216;
+			productRefGroup = F0389A241FA79FED0008E216 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F0389A221FA79FED0008E216 /* testApp Vesti Reader */,
+				F0389A361FA79FED0008E216 /* testApp Vesti ReaderTests */,
+				F0389A411FA79FED0008E216 /* testApp Vesti ReaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F0389A211FA79FED0008E216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F03151DD1FA899D800FC7200 /* OpenSansCondensed-LightItalic.ttf in Resources */,
+				F0389A311FA79FED0008E216 /* LaunchScreen.storyboard in Resources */,
+				F03151DE1FA899D800FC7200 /* OpenSansCondensed-Bold.ttf in Resources */,
+				F03CC1851FA88DB6004BAA60 /* Info.plist in Resources */,
+				F03151DC1FA899D800FC7200 /* OpenSansCondensed-Light.ttf in Resources */,
+				F0389A2E1FA79FED0008E216 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0389A351FA79FED0008E216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0389A401FA79FED0008E216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		37C45323DDEAD87EBF6BEFF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testApp Vesti Reader-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53754284F2D2985D51C03068 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-testApp Vesti Reader/Pods-testApp Vesti Reader-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testApp Vesti Reader/Pods-testApp Vesti Reader-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		825D8A3EB0F290B842A98074 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-testApp Vesti Reader/Pods-testApp Vesti Reader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F0389A1F1FA79FED0008E216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0389A291FA79FED0008E216 /* ViewController.swift in Sources */,
+				F0F976A41FA887C100807798 /* Macros.swift in Sources */,
+				F0F9769D1FA8619500807798 /* NewsTableViewCell.swift in Sources */,
+				F0F9769F1FA861B700807798 /* News.swift in Sources */,
+				F0F976A11FA865F900807798 /* ShowNewsViewController.swift in Sources */,
+				F0389A271FA79FED0008E216 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0389A331FA79FED0008E216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0389A3C1FA79FED0008E216 /* testApp_Vesti_ReaderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0389A3E1FA79FED0008E216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F0389A471FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F0389A391FA79FED0008E216 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0389A221FA79FED0008E216 /* testApp Vesti Reader */;
+			targetProxy = F0389A381FA79FED0008E216 /* PBXContainerItemProxy */;
+		};
+		F0389A441FA79FED0008E216 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F0389A221FA79FED0008E216 /* testApp Vesti Reader */;
+			targetProxy = F0389A431FA79FED0008E216 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F0389A2F1FA79FED0008E216 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F0389A301FA79FED0008E216 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F0389A491FA79FED0008E216 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F0389A4A1FA79FED0008E216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F0389A4C1FA79FED0008E216 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79164B590821A614C20E880A /* Pods-testApp Vesti Reader.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5AP8HMM6W8;
+				INFOPLIST_FILE = "testApp Vesti Reader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kz.my.testApp-Vesti-Reader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0389A4D1FA79FED0008E216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98B6CE554C07F78B4A465F67 /* Pods-testApp Vesti Reader.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5AP8HMM6W8;
+				INFOPLIST_FILE = "testApp Vesti Reader/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kz.my.testApp-Vesti-Reader";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F0389A4F1FA79FED0008E216 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5AP8HMM6W8;
+				INFOPLIST_FILE = "testApp Vesti ReaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kz.my.testApp-Vesti-ReaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testApp Vesti Reader.app/testApp Vesti Reader";
+			};
+			name = Debug;
+		};
+		F0389A501FA79FED0008E216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5AP8HMM6W8;
+				INFOPLIST_FILE = "testApp Vesti ReaderTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kz.my.testApp-Vesti-ReaderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/testApp Vesti Reader.app/testApp Vesti Reader";
+			};
+			name = Release;
+		};
+		F0389A521FA79FED0008E216 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5AP8HMM6W8;
+				INFOPLIST_FILE = "testApp Vesti ReaderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kz.my.testApp-Vesti-ReaderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "testApp Vesti Reader";
+			};
+			name = Debug;
+		};
+		F0389A531FA79FED0008E216 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5AP8HMM6W8;
+				INFOPLIST_FILE = "testApp Vesti ReaderUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "kz.my.testApp-Vesti-ReaderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "testApp Vesti Reader";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F0389A1E1FA79FED0008E216 /* Build configuration list for PBXProject "testApp Vesti Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0389A491FA79FED0008E216 /* Debug */,
+				F0389A4A1FA79FED0008E216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0389A4B1FA79FED0008E216 /* Build configuration list for PBXNativeTarget "testApp Vesti Reader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0389A4C1FA79FED0008E216 /* Debug */,
+				F0389A4D1FA79FED0008E216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0389A4E1FA79FED0008E216 /* Build configuration list for PBXNativeTarget "testApp Vesti ReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0389A4F1FA79FED0008E216 /* Debug */,
+				F0389A501FA79FED0008E216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F0389A511FA79FED0008E216 /* Build configuration list for PBXNativeTarget "testApp Vesti ReaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0389A521FA79FED0008E216 /* Debug */,
+				F0389A531FA79FED0008E216 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F0389A1B1FA79FED0008E216 /* Project object */;
+}

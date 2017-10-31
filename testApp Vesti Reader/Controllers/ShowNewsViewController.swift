@@ -11,6 +11,8 @@ import Cartography
 
 class ShowNewsViewController: UIViewController {
     
+    //MARK: Properties
+    
     var news: News?
     
     let screen = UIScreen.main.bounds
@@ -21,7 +23,7 @@ class ShowNewsViewController: UIViewController {
         scrollView.backgroundColor = .white
         return scrollView
     }()
- 
+    
     public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Macros.Fonts.bold, size: 24)
@@ -36,7 +38,7 @@ class ShowNewsViewController: UIViewController {
         label.textColor = Macros.GlobalColors.fontColor
         return label
     }()
- 
+    
     public lazy var descriptionText: UITextView = {
         let text = UITextView()
         text.font = UIFont(name: Macros.Fonts.regular, size: 20)
@@ -52,12 +54,15 @@ class ShowNewsViewController: UIViewController {
         return img
     }()
     
+    //MARK: View LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure() //Получение данных
+        configureViews() //Получение данных
         configureConstraints() //констрейны
         imageLoad(urlString: (news?.imgUrl)!) // Параллельно загрузить изображение
     }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         var lastHeight = 0
@@ -85,29 +90,37 @@ class ShowNewsViewController: UIViewController {
             }.resume()
     }
     
-    func configure() {
+    //MARK: Configure Views
+    
+    func configureViews() {
         view.addSubview(scrollView)
-        self.scrollView.addSubview(titleLabel)
-        self.scrollView.addSubview(dateLabel)
-        self.scrollView.addSubview(descriptionText)
-        self.scrollView.addSubview(imageView)
+        [titleLabel, dateLabel, descriptionText, imageView].forEach{
+            scrollView.addSubview($0)
+        }
         titleLabel.text = self.news?.title
         dateLabel.text = News.rightDate(date: (self.news?.pubDate)!)
         descriptionText.text = self.news?.description
-     }
+    }
+    
+    //MARK: Configure Constraints
+    
     func configureConstraints() {
         constrain(scrollView,view){
             $0.edges == $1.edges
         }
+        
         constrain(scrollView, imageView, titleLabel, dateLabel, descriptionText) {
             $1.top == $0.top
             $1.left == $0.left
             $1.width == $0.width
+            
             $2.top == $1.bottom + 10
             $2.width == $0.width - 20
             $2.left == $0.left + 20
+            
             $3.top == $2.bottom + 5
             $3.right == $2.right - 20
+            
             $4.top == $3.bottom + 5
             $4.width == $0.width - 40
             $4.left == $0.left + 20

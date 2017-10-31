@@ -9,7 +9,9 @@
 import UIKit
 import Cartography
 
- class ViewController: UIViewController {
+class ViewController: UIViewController {
+    
+    //MARK: Properties
     
     var news = [News]()
     
@@ -17,7 +19,7 @@ import Cartography
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.center = self.view.center
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityIndicator.activityIndicatorViewStyle = .gray
         return activityIndicator
     }()
     
@@ -33,14 +35,18 @@ import Cartography
         return tableView
     }()
     
+    //MARK: LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshCont() // pull to refresh для подгрузки новых новостей
+        refreshCont()
+        configureViews()
         configureConstraints()
         self.loadData()
     }
     
-    // Функция - получения данных
+    // MARK:  Функция - получения данных
+    
     func loadData(){
         News.parse(){ [unowned self] (feed, error) in
             guard let news = feed else { return }
@@ -48,14 +54,22 @@ import Cartography
             self.tableView.reloadData()
         }
     }
-    func configureConstraints() {
+    
+    //MARK: Configure Views
+    
+    func configureViews() {
         view.addSubview(tableView) //добавляем tableview
         self.title = "Последние Новости"  //название контролера
-
+    }
+    
+    //MARK: Configure Constraints
+    
+    func configureConstraints() {
         constrain(tableView,view) { tv, v in //настраиваем констрейны
             tv.edges == v.edges
         }
     }
+    
     func refreshCont() {
         refreshControl = UIRefreshControl()
         refreshControl.attributedTitle = NSAttributedString(string: "Пожалуйста, подождите...")
@@ -73,7 +87,7 @@ import Cartography
     
     func refreshBegin(newtext:String, refreshEnd:@escaping (Int) -> ()) {
         DispatchQueue.global().async {
-             self.loadData()
+            self.loadData()
             sleep(1)
             DispatchQueue.main.async() {
                 refreshEnd(0)
@@ -82,6 +96,9 @@ import Cartography
     }
     
 }
+
+//MARK: UITableViewDataSource, UITableViewDelegate
+
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

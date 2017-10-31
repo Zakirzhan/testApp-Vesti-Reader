@@ -10,7 +10,9 @@ import UIKit
 import Cartography
 
 class NewsTableViewCell: UITableViewCell {
-     
+    
+    //MARK: Properties
+    
     public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Macros.Fonts.regular, size: 24)
@@ -26,28 +28,36 @@ class NewsTableViewCell: UITableViewCell {
         return label
     }()
     
+    //MARK: View LifeCycle
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: .subtitle, reuseIdentifier: reuseIdentifier) 
         configureViews()
         configureConstraints()
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: Configure Views
+    
     func configureViews() {
         self.addSubview(titleLabel)
         self.addSubview(dateLabel)
     }
     
+    //MARK: Configure Constraints
+    
     func configureConstraints() {
-        constrain(self,titleLabel,dateLabel){
+        constrain(self, titleLabel, dateLabel){
+        
             $1.top == $0.top + 10
             $1.left == $0.left + 16
+            
             $1.width == $0.width - 32
             $2.left == $0.left + 16
+            
             $2.top == $1.bottom + 8
             $2.bottom == $0.bottom - 10
         }

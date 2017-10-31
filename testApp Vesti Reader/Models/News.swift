@@ -16,18 +16,21 @@ struct News {
     let sourceUrl: String
     let description: String
     
+    // MARK: Конвертация стрингов на читабельную дату
     
-   static func rightDate(date: String) -> String { // Конвертация стрингов на читабельную дату
+    static func rightDate(date: String) -> String {
         let dateString = date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
         let date = dateFormatter.date(from: dateString)
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy, HH:mm"
-    dateFormatter.locale = NSLocale(localeIdentifier: "ru_RU") as Locale!
+        dateFormatter.locale = NSLocale(localeIdentifier: "ru_RU") as Locale!
         let newdate = dateFormatter.string(from: date!)
         return newdate
     }
-    //Функция парсинга rss
+    
+    // MARK: Функция парсинга rss
+    
     static func parse(callback: @escaping ([News]?, Error?) -> Void ){
         let url =  "https://www.vesti.ru/vesti.rss"
         Alamofire.request(url, method:.get, parameters:nil).response { response in
@@ -38,9 +41,7 @@ struct News {
                 callback(feed, nil)
             } catch let error {
                 callback(nil, error)
-                
             }
-            
         }
     }
 }

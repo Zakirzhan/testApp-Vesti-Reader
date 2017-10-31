@@ -14,14 +14,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window = UIWindow(frame: UIScreen.main.bounds)
-        let rootViewController = ViewController()
         let nc = UINavigationController(rootViewController: ViewController())
         nc.navigationBar.isTranslucent = false
         nc.navigationBar.tintColor = .white
         nc.navigationBar.barStyle = UIBarStyle.black
         nc.navigationBar.setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         nc.navigationBar.shadowImage = UIImage() 
-         nc.navigationBar.barTintColor = Macros.GlobalColors.bgColor
+        nc.navigationBar.barTintColor = Macros.GlobalColors.bgColor
         window?.rootViewController = nc 
         window?.makeKeyAndVisible()
         return true

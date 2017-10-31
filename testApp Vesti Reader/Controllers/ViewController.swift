@@ -21,39 +21,38 @@ import Cartography
         return activityIndicator
     }()
     
-     var refreshControl:UIRefreshControl!
+    var refreshControl:UIRefreshControl!
     
     lazy var tableView: UITableView = {
         let tableView = UITableView()
-         tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "newsCell")
-        
+        tableView.register(NewsTableViewCell.self, forCellReuseIdentifier: "newsCell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         return tableView
     }()
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .default
-    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        refreshCont()
-        view.addSubview(tableView) 
+        refreshCont() // pull to refresh для подгрузки новых новостей
         configureConstraints()
-        self.title = "Последние Новости"  
         self.loadData()
     }
     
+    // Функция - получения данных
     func loadData(){
         News.parse(){ [unowned self] (feed, error) in
             guard let news = feed else { return }
-            self.news = feed!
+            self.news = news
             self.tableView.reloadData()
         }
     }
     func configureConstraints() {
-        constrain(tableView,view) { tv, v in
+        view.addSubview(tableView) //добавляем tableview
+        self.title = "Последние Новости"  //название контролера
+
+        constrain(tableView,view) { tv, v in //настраиваем констрейны
             tv.edges == v.edges
         }
     }

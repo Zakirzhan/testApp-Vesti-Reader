@@ -17,7 +17,7 @@ struct News {
     let description: String
     
     
-   static func rightDate(date: String) -> String {
+   static func rightDate(date: String) -> String { // Конвертация стрингов на читабельную дату
         let dateString = date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "E, d MMM yyyy HH:mm:ss Z"
@@ -27,15 +27,13 @@ struct News {
         let newdate = dateFormatter.string(from: date!)
         return newdate
     }
-    
+    //Функция парсинга rss
     static func parse(callback: @escaping ([News]?, Error?) -> Void ){
         let url =  "https://www.vesti.ru/vesti.rss"
         Alamofire.request(url, method:.get, parameters:nil).response { response in
-            guard let data = response.data else {
-                return
-            }
+            guard let data = response.data else { return }
             do {
-                var xml = SWXMLHash.parse(response.data!)
+                let xml = SWXMLHash.parse(data)
                 let feed: [News] = try xml["rss"]["channel"]["item"].value()
                 callback(feed, nil)
             } catch let error {
@@ -48,17 +46,13 @@ struct News {
 }
 
 extension News: XMLIndexerDeserializable {
-    
-    //
-    
     static func deserialize(_ node: XMLIndexer) throws -> News {
         return try News(
             title: node["title"].value(),
             pubDate: node["pubDate"].value(),
-            imgUrl: node["enclosure"][0].value(ofAttribute: "url"),
+            imgUrl: node["enclosure"][0].value(ofAttribute: "url"), //"Enclosure" по умолчанию 0 - фото, 1 - видео.
             sourceUrl: node["link"].value(),
-            description: node["yandex:full-text"].value()
-        )
+            description: node["yandex:full-text"].value() )
     }
 }
 

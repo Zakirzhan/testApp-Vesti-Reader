@@ -36,7 +36,7 @@ class ShowNewsViewController: UIViewController {
         label.textColor = Macros.GlobalColors.fontColor
         return label
     }()
-    
+ 
     public lazy var descriptionText: UITextView = {
         let text = UITextView()
         text.font = UIFont(name: Macros.Fonts.regular, size: 20)
@@ -64,7 +64,7 @@ class ShowNewsViewController: UIViewController {
         
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if error != nil {
-                print("Failed fetching image:", error)
+                print("Failed fetching image:", error ?? "error")
                 return
             }
             
@@ -93,30 +93,27 @@ class ShowNewsViewController: UIViewController {
     func configure() {
         view.addSubview(scrollView)
         self.scrollView.addSubview(titleLabel)
-         self.scrollView.addSubview(dateLabel)
+        self.scrollView.addSubview(dateLabel)
         self.scrollView.addSubview(descriptionText)
         self.scrollView.addSubview(imageView)
      }
     func configureConstraints() {
-        constrain(scrollView,view){s, v in
-            s.edges == v.edges
+        constrain(scrollView,view){
+            $0.edges == $1.edges
         }
-
-        
-        constrain(scrollView, imageView, titleLabel, dateLabel, descriptionText) { v, img, title, date, description in
-          img.top == v.top
-          img.left == v.left
-          img.width == v.width
-          title.top == img.bottom + 10
-          title.width == v.width - 20
-          title.left == v.left + 20
-            date.top == title.bottom + 5
-            date.right == title.right - 20
-            description.top == date.bottom + 5
-            description.width == v.width - 40
-            description.left == v.left + 20
+        constrain(scrollView, imageView, titleLabel, dateLabel, descriptionText) {
+            $1.top == $0.top
+            $1.left == $0.left
+            $1.width == $0.width
+            $2.top == $1.bottom + 10
+            $2.width == $0.width - 20
+            $2.left == $0.left + 20
+            $3.top == $2.bottom + 5
+            $3.right == $2.right - 20
+            $4.top == $3.bottom + 5
+            $4.width == $0.width - 40
+            $4.left == $0.left + 20
         }
-        
     }
     
     override func didReceiveMemoryWarning() {

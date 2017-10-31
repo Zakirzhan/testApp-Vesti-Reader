@@ -12,6 +12,7 @@ import Cartography
 class ShowNewsViewController: UIViewController {
     
     var news: News?
+    
     let screen = UIScreen.main.bounds
     
     fileprivate lazy var scrollView: UIScrollView = {
@@ -20,8 +21,7 @@ class ShowNewsViewController: UIViewController {
         scrollView.backgroundColor = .white
         return scrollView
     }()
-
-    
+ 
     public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Macros.Fonts.bold, size: 24)
@@ -54,31 +54,9 @@ class ShowNewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configure()
-        titleLabel.text = news?.title
-        dateLabel.text = News.rightDate(date: (news?.pubDate)!)
-        descriptionText.text = news?.description
-        
-        
-        guard let url = URL(string: (news!.imgUrl)) else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
-            if error != nil {
-                print("Failed fetching image:", error ?? "error")
-                return
-            }
-            
-            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
-                print("Not a proper HTTPURLResponse or statusCode")
-                return
-            }
-            
-            DispatchQueue.main.async {
-                self.imageView.image = UIImage(data: data!)
-            }
-            }.resume()
-        
-        configureConstraints()
+        configure() //Получение данных
+        configureConstraints() //констрейны
+        imageLoad(urlString: (news?.imgUrl)!) // Параллельно загрузить изображение
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -86,8 +64,25 @@ class ShowNewsViewController: UIViewController {
         let descSize = self.descriptionText.sizeThatFits(self.descriptionText.bounds.size)
         let imgSize = self.imageView.sizeThatFits(self.imageView.bounds.size)
         let titleSize = self.titleLabel.sizeThatFits(self.titleLabel.bounds.size)
-        lastHeight = Int(descSize.height + titleSize.height + imgSize.height + 30)
+        lastHeight = Int(descSize.height + titleSize.height + imgSize.height + 50)
         scrollView.contentSize = CGSize(width: self.screen.width , height: CGFloat(lastHeight))
+    }
+    
+    func imageLoad(urlString: String){
+        guard let url = URL(string: urlString) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            if error != nil {
+                print("Failed fetching image:", error ?? "error")
+                return
+            }
+            guard let response = response as? HTTPURLResponse, response.statusCode == 200 else {
+                print("Not a proper HTTPURLResponse or statusCode")
+                return
+            }
+            DispatchQueue.main.async {
+                self.imageView.image = UIImage(data: data!)
+            }
+            }.resume()
     }
     
     func configure() {
@@ -96,6 +91,9 @@ class ShowNewsViewController: UIViewController {
         self.scrollView.addSubview(dateLabel)
         self.scrollView.addSubview(descriptionText)
         self.scrollView.addSubview(imageView)
+        titleLabel.text = self.news?.title
+        dateLabel.text = News.rightDate(date: (self.news?.pubDate)!)
+        descriptionText.text = self.news?.description
      }
     func configureConstraints() {
         constrain(scrollView,view){
@@ -115,10 +113,4 @@ class ShowNewsViewController: UIViewController {
             $4.left == $0.left + 20
         }
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-     }
-    
- 
 }

@@ -10,10 +10,7 @@ import UIKit
 import Cartography
 
 class NewsTableViewCell: UITableViewCell {
-    
-    private var layoutConfigured = false
      
-    private var group = ConstraintGroup()
     public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Macros.Fonts.regular, size: 24)
@@ -21,15 +18,16 @@ class NewsTableViewCell: UITableViewCell {
         label.textColor = Macros.GlobalColors.fontColor
         return label
     }()
+    
     public lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: Macros.Fonts.regular, size: 16)
         label.textColor = .black
         return label
     }()
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier) 
         configureViews()
         configureConstraints()
         
@@ -45,37 +43,18 @@ class NewsTableViewCell: UITableViewCell {
     }
     
     func configureConstraints() {
-        
-        constrain(self,titleLabel,dateLabel){s,title,date in
-            
-            title.top == s.top + 10
-            title.left == s.left + 16
-            title.width == s.width - 32
-            
-            date.left == s.left + 16
-            
-            date.top == title.bottom + 8
-            date.bottom == s.bottom - 10
-            
+        constrain(self,titleLabel,dateLabel){
+            $1.top == $0.top + 10
+            $1.left == $0.left + 16
+            $1.width == $0.width - 32
+            $2.left == $0.left + 16
+            $2.top == $1.bottom + 8
+            $2.bottom == $0.bottom - 10
         }
-        
     }
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-    }
-    
-    func configure(with post: News) { 
-         
-        
+    func configure(with post: News) {
         titleLabel.text = post.title
         dateLabel.text = News.rightDate(date: post.pubDate)
     }
-    
-
 }

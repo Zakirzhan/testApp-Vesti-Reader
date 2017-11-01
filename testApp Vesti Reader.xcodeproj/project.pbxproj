@@ -18,8 +18,8 @@
 		F0389A3C1FA79FED0008E216 /* testApp_Vesti_ReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0389A3B1FA79FED0008E216 /* testApp_Vesti_ReaderTests.swift */; };
 		F0389A471FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0389A461FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift */; };
 		F03CC1851FA88DB6004BAA60 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0389A321FA79FED0008E216 /* Info.plist */; };
+		F07379101FAA035A0083E248 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = F073790F1FAA035A0083E248 /* News.swift */; };
 		F0F9769D1FA8619500807798 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9769C1FA8619500807798 /* NewsTableViewCell.swift */; };
-		F0F9769F1FA861B700807798 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9769E1FA861B700807798 /* News.swift */; };
 		F0F976A11FA865F900807798 /* ShowNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F976A01FA865F900807798 /* ShowNewsViewController.swift */; };
 		F0F976A41FA887C100807798 /* Macros.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F976A31FA887C100807798 /* Macros.swift */; };
 /* End PBXBuildFile section */
@@ -60,8 +60,8 @@
 		F0389A461FA79FED0008E216 /* testApp_Vesti_ReaderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testApp_Vesti_ReaderUITests.swift; sourceTree = "<group>"; };
 		F0389A481FA79FED0008E216 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F03CC1811FA88A7B004BAA60 /* OpenSansCondensed-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSansCondensed-Bold.ttf"; sourceTree = "<group>"; };
+		F073790F1FAA035A0083E248 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		F0F9769C1FA8619500807798 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
-		F0F9769E1FA861B700807798 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = News.swift; path = "testApp Vesti Reader/Models/News.swift"; sourceTree = SOURCE_ROOT; };
 		F0F976A01FA865F900807798 /* ShowNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNewsViewController.swift; sourceTree = "<group>"; };
 		F0F976A31FA887C100807798 /* Macros.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macros.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,7 +136,7 @@
 			children = (
 				F0389A321FA79FED0008E216 /* Info.plist */,
 				F0F976A21FA887AF00807798 /* Extensions */,
-				F0ECEF4C1FA85E190005D0A2 /* Models */,
+				F073790E1FAA032A0083E248 /* Models */,
 				F0ECEF4E1FA85E280005D0A2 /* Views */,
 				F0ECEF4D1FA85E200005D0A2 /* Controllers */,
 				F03CC17E1FA88A4A004BAA60 /* Resources */,
@@ -172,13 +172,12 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F0ECEF4C1FA85E190005D0A2 /* Models */ = {
+		F073790E1FAA032A0083E248 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				F0F9769E1FA861B700807798 /* News.swift */,
+				F073790F1FAA035A0083E248 /* News.swift */,
 			);
-			name = Models;
-			path = "New Group";
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F0ECEF4D1FA85E200005D0A2 /* Controllers */ = {
@@ -360,7 +359,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		53754284F2D2985D51C03068 /* [CP] Embed Pods Frameworks */ = {
@@ -407,10 +406,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F07379101FAA035A0083E248 /* News.swift in Sources */,
 				F0389A291FA79FED0008E216 /* ViewController.swift in Sources */,
 				F0F976A41FA887C100807798 /* Macros.swift in Sources */,
 				F0F9769D1FA8619500807798 /* NewsTableViewCell.swift in Sources */,
-				F0F9769F1FA861B700807798 /* News.swift in Sources */,
 				F0F976A11FA865F900807798 /* ShowNewsViewController.swift in Sources */,
 				F0389A271FA79FED0008E216 /* AppDelegate.swift in Sources */,
 			);

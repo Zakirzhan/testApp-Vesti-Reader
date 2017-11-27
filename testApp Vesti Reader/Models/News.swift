@@ -47,16 +47,17 @@ struct News {
 }
 
 extension News: XMLIndexerDeserializable {
-    static func deserialize(_ node: XMLIndexer) throws -> News {
-        var imgURL = "https://topspb.tv/768x432/uploaded/programs_covers/news1_7hk2cPI.jpg"
-        if((node["enclosure"][0].element?.attribute(by: "url")?.text) != nil) {
-            imgURL = (node["enclosure"][0].element?.attribute(by: "url")?.text)! //"Enclosure" по умолчанию 0 - фото, 1 - видео.
+   static func deserialize(_ node: XMLIndexer) throws -> News {
+        var imageURL: String? = node["enclosure"][0].value(ofAttribute: "url")
+        if imageURL == nil {
+            imageURL = "https://topspb.tv/768x432/uploaded/programs_covers/news1_7hk2cPI.jpg"
         }
-         return try News(
+        return try News(
             title: node["title"].value(),
             pubDate: node["pubDate"].value(),
-            imgUrl: imgURL,
+            imgUrl: imageURL!,
             sourceUrl: node["link"].value(),
             description: node["yandex:full-text"].value() )
+
     }
 }
